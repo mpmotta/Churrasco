@@ -36,7 +36,7 @@
 		//cadastrar produtos
 		public function cadastrar($sql){
 			$inserir_linha = $this->conn->query($sql) or die($this->conn->error.__LINE__);
-			if(inserir_linha){
+			if($inserir_linha){
 				header("Location: gerenciar_produtos.php?msg=Dados cadastrados com sucesso!");
 				$conn->close();
 				exit();
@@ -48,7 +48,7 @@
 		//cadastrar usuários
 		public function cadastrarUser($sql){
 			$inserir_linha = $this->conn->query($sql) or die($this->conn->error.__LINE__);
-			if(inserir_linha){
+			if($inserir_linha){
 				header("Location: ../Views/gerenciar_usuarios.php?msg=Usuário cadastrado com sucesso!");
 				$conn->close();
 				exit();
@@ -60,7 +60,7 @@
 		//funcao atualizar produtos
 		public function atualizar($sql){
 			$update_row = $this->conn->query($sql) or die($this->conn->error.__LINE__);
-			if(update_row){
+			if($update_row){
 				header("Location: ../Views/gerenciar_produtos.php?msg=Dados atualizados com sucesso!");
 				exit();
 			}else{
@@ -71,7 +71,7 @@
 		//funcao atualizar usuarios
 		public function atualizarUser($sql){
 			$update_row = $this->conn->query($sql) or die($this->conn->error.__LINE__);
-			if(update_row){
+			if($update_row){
 				header("Location: ../Views/gerenciar_usuarios.php?msg=Dados atualizados com sucesso!");
 				exit();
 			}else{
@@ -83,7 +83,7 @@
 		//funcao apagar produtos
 		public function apagar($sql){
 			$apagar_linha = $this->conn->query($sql) or die($this->conn->error.__LINE__);	
-			if(apagar_linha){
+			if($apagar_linha){
 					header("Location: ../Views/gerenciar_produtos.php?msg=Dados apagados com sucesso"); 
 			}else{
 				die("Erro ao apagar:(".$this->conn->errno.")".$this->conn->error);
@@ -93,7 +93,7 @@
 		//funcao apagar usuários
 		public function apagarUser($sql){
 			$apagar_linha = $this->conn->query($sql) or die($this->conn->error.__LINE__);	
-			if(apagar_linha){
+			if($apagar_linha){
 					header("Location: ../Views/gerenciar_usuarios.php?msg=Usuário apagado com sucesso"); 
 			}else{
 				die("Erro ao apagar:(".$this->conn->errno.")".$this->conn->error);
